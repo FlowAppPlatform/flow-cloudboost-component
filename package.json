@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "cloudboost": "^2.0.264",
-    "flow-platform-sdk": "^2.0.94"
+    "flow-platform-sdk": "^2.0.94",
+    "q": "^1.5.1"
   },
   "devDependencies": {
     "eslint": "^5.4.0",

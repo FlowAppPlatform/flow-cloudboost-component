@@ -1,4 +1,5 @@
 var CB = require('cloudboost');
+var Q  = require('q');
 
 /* REMOVE FOR PRODUCTION */
 CB.apiUrl = 'http://localhost:4730';
@@ -38,6 +39,37 @@ class API {
 
   deleteById(id) {
     return this.delete([id]);
+  }
+
+  find(constraints) {
+    return this._find(constraints);
+  }
+
+  findNotEqual(constraints) {
+    return this._find(constraints, false);
+  }
+
+  _constructQuery(constraints=[], useEqualTo) {
+    const query = new this.CB.CloudQuery(this.TABLE);
+    if (!constraints.length) return query;
+    constraints.forEach(constraint => {
+      const keys = Object.keys(constraint);
+      if (keys.length)
+        useEqualTo ?
+          query.equalTo(keys[0], constraint[keys[0]]) :
+          query.notEqualTo(keys[0], constraint[keys[0]]);
+    });
+    return query;
+  }
+
+  _find(constraints=[], useEqualTo=true) {
+    const d = Q.defer();
+    const query = this._constructQuery(constraints, useEqualTo);
+    query.find({
+      success: documents => d.resolve(documents),
+      error: error => d.reject(error)
+    });
+    return d.promise;
   }
 
 }
