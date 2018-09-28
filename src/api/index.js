@@ -44,8 +44,8 @@ class API {
   /* 
    * sample 'constraints' structure 
    * { 
-   *   "first_name": {"equalTo": "qwerty"},
-   *   "age": {"greaterThan": "6"}
+   *   first_name: {equalTo: "qwerty"},
+   *   age: {greaterThan: 6}
    * }
    * 
    */
@@ -62,8 +62,8 @@ class API {
   /* 
    * sample 'constraints' structure 
    * { 
-   *   "first_name": {"equalTo": "qwerty"},
-   *   "age": {"greaterThan": "6"}
+   *   first_name: {equalTo: "qwerty"},
+   *   age: {greaterThan: 6}
    * }
    * 
    */

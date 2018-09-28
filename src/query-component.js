@@ -9,28 +9,40 @@ class QueryComponent extends Component {
     super();    
     this.name = 'Query Component';
 
-    var documents = new Flow.Property('Documents', 'list');
-    documents.required = true;
+    /* 
+    * 'Constraints' should be passed here as a JSON stringified object
+    * 'Constraints' sample structure 
+    * `{ 
+    *   "first_name": {"equalTo": "qwerty"},
+    *   "age": {"greaterThan": 6}
+    * }`
+    * 
+    */
+    var constraints = new Flow.Property('Constraints', 'text');
+    constraints.required = true;
     
-    this.addProperty(documents);
+    this.addProperty(constraints);
 
-    // save the documents here
+    // query with constraints here
     this.attachTask(function () {
-      let task = 
+
+      try {
+
         new API(
           this.getProperty('APP_ID').data,
           this.getProperty('CLIENT_KEY').data,
           this.getProperty('Table').data
-        ).save(this.getProperty('Documents').data);
-      
-      if (task instanceof Error) {
-        this.emitResult(this.getPort('Error'));
-      } else
-        task
-          .then(
-            () => this.emitResult(this.getPort('Success')),
-            () => this.emitResult(this.getPort('Error'))
-          );
+        ).find(
+          // constraints was added JSON stringified
+          // so we have to JSON.parse here
+          JSON.parse(this.getProperty('Constraints').data)
+        ).then(
+          () => this.emitResult(this.getPort('Success')),
+          () => this.emitResult(this.getPort('Error'))
+        );
+
+      } catch(e) { this.emitResult(this.getPort('Error')); }
+
     });
 
   }
