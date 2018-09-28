@@ -27,14 +27,23 @@ class API {
 
   delete(ids=[]) {
     if (!ids.length) return new Error('No documents specified');
-    const objects = ids.map(id => {
+    const deferred = Q.defer();
+    ids.forEach((id, index) => {
       const query = new this.CB.CloudQuery(this.TABLE);
       query.findById(id).then(
-        object => object,
-        err => { if (err) return null; }
+        object => {
+          object.delete({
+            success : () => {
+              if (index + 1 === ids.length)
+                deferred.resolve(object);
+            },
+            error : e => deferred.reject(e)
+          });
+        },
+        err => deferred.reject(err)
       );
     });
-    return this.CB.CloudObject.deleteAll(objects);
+    return deferred.promise;
   }
 
   deleteById(id) {
