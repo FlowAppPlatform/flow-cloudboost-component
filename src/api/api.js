@@ -42,34 +42,43 @@ class API {
   }
 
   find(constraints) {
-    return this._find(constraints);
-  }
-
-  findNotEqual(constraints) {
-    return this._find(constraints, false);
-  }
-
-  _constructQuery(constraints=[], useEqualTo) {
-    const query = new this.CB.CloudQuery(this.TABLE);
-    if (!constraints.length) return query;
-    constraints.forEach(constraint => {
-      const keys = Object.keys(constraint);
-      if (keys.length)
-        useEqualTo ?
-          query.equalTo(keys[0], constraint[keys[0]]) :
-          query.notEqualTo(keys[0], constraint[keys[0]]);
-    });
-    return query;
-  }
-
-  _find(constraints=[], useEqualTo=true) {
     const d = Q.defer();
-    const query = this._constructQuery(constraints, useEqualTo);
+    const query = this._constructQuery(constraints);
     query.find({
       success: documents => d.resolve(documents),
       error: error => d.reject(error)
     });
     return d.promise;
+  }
+
+  // constraint may be { "first_name": {"equalTo":"qwerty"} } or { "age": {"greaterThan":"6"} }
+  _constructQuery(constraints={}) {
+    const query = new this.CB.CloudQuery(this.TABLE);
+    const keys = Object.keys(constraints);
+    if (!keys.length) return query;
+    keys.forEach(key => {
+      this._constraintQuery(key, constraints[key], query);
+    });
+    return query;
+  }
+
+  _constraintQuery(column, constraint, query) {
+    try {
+      const operator = Object.keys(constraint)[0].toString().toLowerCase();
+      if (!this._operators(query)[operator])
+        this._operators(query)[operator](column, constraint[operator]);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  _operators(query) {
+    return {
+      'equal': query.equalTo,
+      'notequal': query.notEqualTo,
+      'greaterthan': query.greaterThan,
+      'lessthan': query.lessThan
+    };
   }
 
 }
