@@ -23,12 +23,16 @@ class Component extends Flow.Component {
     var success = new Flow.Port('Success');
     var error = new Flow.Port('Error');
     
+    var result = new Flow.Property('Result', 'list');
+    success.addProperty(result);
+
     this.addPort(success);
     this.addPort(error);
 
   }
 
-  emitResult(port) {
+  emitResult(port, result=null) {
+    if (result) port.getProperty('Result').data = result;
     port.emit();
     this.taskComplete();
   }

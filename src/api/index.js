@@ -77,23 +77,36 @@ class API {
     return query;
   }
 
-  _constraintQuery(column, constraint, query) {
+  _constraintQuery(column, constraint, query) {      
     try {
-      const operator = Object.keys(constraint)[0].toString().toLowerCase();
-      if (!this._operators(query)[operator])
-        this._operators(query)[operator](column, constraint[operator]);
+      const operator = Object.keys(constraint)[0];
+      this._effectOperator(
+        operator.toString().toLowerCase(),
+        query,
+        column,
+        constraint[operator]
+      );
     } catch (error) {
       return null;
     }
   }
 
-  _operators(query) {
-    return {
-      'equal': query.equalTo,
-      'notequal': query.notEqualTo,
-      'greaterthan': query.greaterThan,
-      'lessthan': query.lessThan
-    };
+  _effectOperator(operator, query, column, value) {
+    switch (operator) {
+    case 'equalto':
+      query.equalTo(column, value);
+      break;
+    case 'notequalto':
+      query.notEqualTo(column, value);
+      break;
+    case 'lessthan':
+      query.lessThan(column, value);
+      break;
+    case 'greaterthan':
+      query.greaterThan(column, value);
+      break;
+    default: break;
+    }
   }
 
 }
