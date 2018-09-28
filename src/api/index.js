@@ -41,6 +41,14 @@ class API {
     return this.delete([id]);
   }
 
+  /* 
+   * sample 'constraints' structure 
+   * { 
+   *   "first_name": {"equalTo": "qwerty"},
+   *   "age": {"greaterThan": "6"}
+   * }
+   * 
+   */
   find(constraints) {
     const d = Q.defer();
     const query = this._constructQuery(constraints);
@@ -51,7 +59,14 @@ class API {
     return d.promise;
   }
 
-  // constraint may be { "first_name": {"equalTo":"qwerty"} } or { "age": {"greaterThan":"6"} }
+  /* 
+   * sample 'constraints' structure 
+   * { 
+   *   "first_name": {"equalTo": "qwerty"},
+   *   "age": {"greaterThan": "6"}
+   * }
+   * 
+   */
   _constructQuery(constraints={}) {
     const query = new this.CB.CloudQuery(this.TABLE);
     const keys = Object.keys(constraints);
