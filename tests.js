@@ -5,6 +5,15 @@ var SaveComponent = require('./src/save-component');
 var DeleteComponent = require('./src/delete-component');
 var QueryComponent = require('./src/query-component');
 
+/*
+ * 
+ * Before running tests
+ * 
+ * have cloudboost running locally
+ * create a 'Games' table
+ * replace appId, clientKey with your own
+ * 
+ *  */
 const appId = 'amdpzidkwapn';
 const clientKey = 'fa63e2b8-763f-46b0-8a07-ca2a289032db';
 const TABLE = 'Games';
