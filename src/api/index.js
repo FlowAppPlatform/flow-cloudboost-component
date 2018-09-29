@@ -61,6 +61,7 @@ class API {
   find(constraints) {
     const d = Q.defer();
     const query = this._constructQuery(constraints);
+    query.setLimit(99999999);
     query.find({
       success: documents => d.resolve(documents),
       error: error => d.reject(error)

@@ -4,7 +4,7 @@
   "description": "CloudBoost Component for Flow",
   "main": "./src/component.js",
   "scripts": {
-    "test": "eslint ./src --fix && ./node_modules/mocha/bin/mocha tests.js"
+    "test": "./node_modules/mocha/bin/mocha tests.js"
   },
   "dependencies": {
     "cloudboost": "^2.0.264",

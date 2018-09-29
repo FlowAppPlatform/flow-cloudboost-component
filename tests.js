@@ -5,38 +5,39 @@ var SaveComponent = require('./src/save-component');
 var DeleteComponent = require('./src/delete-component');
 var QueryComponent = require('./src/query-component');
 
-const APP_ID = 'APP_ID';
-const CLIENT_KEY = 'CLIENT_KEY';
-const table = 'Table';
-
 const appId = 'amdpzidkwapn';
 const clientKey = 'fa63e2b8-763f-46b0-8a07-ca2a289032db';
 const TABLE = 'Games';
 
 describe(`Component Tests
 `, function () {
+  
+  const APP_ID = 'APP_ID';
+  const CLIENT_KEY = 'CLIENT_KEY';
+  const TABLE = 'Table';
+
   it('Components should have all general required properties', function (done) {
     try {
       let component = new Component();
       
       component.getProperty(APP_ID);
       component.getProperty(CLIENT_KEY);
-      component.getProperty(table);
+      component.getProperty(TABLE);
       
       component = new QueryComponent();
       component.getProperty(APP_ID);
       component.getProperty(CLIENT_KEY);
-      component.getProperty(table);
+      component.getProperty(TABLE);
       
       component = new SaveComponent();
       component.getProperty(APP_ID);
       component.getProperty(CLIENT_KEY);
-      component.getProperty(table);
+      component.getProperty(TABLE);
       
       component = new DeleteComponent();
       component.getProperty(APP_ID);
       component.getProperty(CLIENT_KEY);
-      component.getProperty(table);
+      component.getProperty(TABLE);
       
       done();
     } catch(e) { done(new Error('A component is missing required properties')); }
@@ -138,10 +139,11 @@ describe(`API Tests
     );
   })
   it('DeleteComponent should delete documents', function (done) {
+    this.timeout(7000);
     query().then(
       function(res) { 
         if (res.length) {
-          remove(res[0].document.id).then(
+          remove(res[0].document._id).then(
             function() {
               query().then(
                 function(r) { if (r.length+1 === res.length) done(); },
