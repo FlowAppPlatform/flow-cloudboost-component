@@ -1,9 +1,6 @@
 var CB = require('cloudboost');
 var Q  = require('q');
 
-/* REMOVE FOR PRODUCTION */
-CB.apiUrl = 'http://localhost:4730';
-
 class API {
 
   constructor(APP_ID, CLIENT_KEY, TABLE) {
