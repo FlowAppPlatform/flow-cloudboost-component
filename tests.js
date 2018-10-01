@@ -9,14 +9,15 @@ var QueryComponent = require('./src/query-component');
  * 
  * Before running tests
  * 
- * have cloudboost running locally
  * create a 'Games' table
  * replace appId, clientKey with your own
  * 
  *  */
-const appId = 'amdpzidkwapn';
-const clientKey = 'fa63e2b8-763f-46b0-8a07-ca2a289032db';
-const TABLE = 'Games';
+const appId = '';
+const clientKey = '';
+const TABLE = '';
+
+if (!appId || !clientKey || !TABLE) return;
 
 describe(`Component Tests
 `, function () {
@@ -142,7 +143,7 @@ describe(`API Tests
     );
   })
   it('SaveComponent should save documents', function (done) {
-    save('Netball').then(
+    save('Chess').then(
       function() { done(); },
       function(e) { done(e); }
     );
