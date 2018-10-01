@@ -1,0 +1,31 @@
+{
+  "name": "flow-cloudboost-component",
+  "version": "1.0.0",
+  "description": "CloudBoost Component for Flow",
+  "main": "./src/component.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha tests.js"
+  },
+  "dependencies": {
+    "cloudboost": "^2.0.264",
+    "flow-platform-sdk": "^2.0.94",
+    "q": "^1.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "mocha": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlowAppPlatform/flow-cloudboost-component.git"
+  },
+  "keywords": [
+    "cloudboost"
+  ],
+  "author": "Hackerbay Inc. <hello@hackerbay.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/FlowAppPlatform/flow-cloudboost-component/issues"
+  },
+  "homepage": "https://github.com/FlowAppPlatform/flow-cloudboost-component#readme"
+}
