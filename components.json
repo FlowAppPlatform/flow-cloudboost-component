@@ -1,0 +1,200 @@
+{
+  "flow-cloudboost-component-query": {
+    "componentId": "flow-cloudboost-component-query",
+    "title": "Query for Objects",
+    "imgSrc": "assets/icons/cloudboost.svg",
+    "type": "flow-graph-component",
+    "file": "src/query.js",
+    "metadata": {
+      "icon-color": "#7ab260"
+    },
+    "ports": [
+      {
+        "id": "success",
+        "title": "Success",
+        "description": "Denotes the state when the query is successfully made"
+      },
+      {
+        "id": "error",
+        "title": "Error",
+        "description": "Denotes the state when an error occurs"
+      }
+    ],
+    "properties": [
+      {
+        "categoryName": "General",
+        "categoryDescription": "Basic settings about the query component.",
+        "properties": [
+          {
+            "id": "Table",
+            "name": "Table",
+            "type": "text",
+            "data": null,
+            "options": { "required": true }
+          },
+          {
+            "id": "Constraints",
+            "name": "Constraints",
+            "type": "text",
+            "data": null,
+            "options": { "required": false }
+          }
+        ]
+      }, 
+      {
+        "categoryName": "Advanced",
+        "categoryDescription": "API settings for Cloudboost.",
+        "properties": [
+          {
+            "id": "APP_ID",
+            "name": "App ID",
+            "type": "text",
+            "data": null,
+            "options": { "required": true, "global": true }
+          },
+          {
+            "id": "CLIENT_KEY",
+            "name": "Client Key",
+            "type": "text",
+            "data": null,
+            "options": { "required": true, "global": true }
+          }
+        ]
+      }
+    ],
+    "showOnComponentsPanel": false,
+    "isDeletable": false
+  },
+  "flow-cloudboost-component-save": {
+    "componentId": "flow-cloudboost-component-save",
+    "title": "Save Object",
+    "imgSrc": "assets/icons/cloudboost.svg",
+    "type": "flow-graph-component",
+    "file": "src/save.js",
+    "metadata": {
+      "icon-color": "#7ab260"
+    },
+    "ports": [
+      {
+        "id": "success",
+        "title": "Success",
+        "description": "Denotes the state when the task is successfully done"
+      },
+      {
+        "id": "error",
+        "title": "Error",
+        "description": "Denotes the state when an error occurs"
+      }
+    ],
+    "properties": [
+      {
+        "categoryName": "General",
+        "categoryDescription": "Basic settings about the save component.",
+        "properties": [
+          {
+            "id": "Table",
+            "name": "Table",
+            "type": "text",
+            "data": null,
+            "options": { "required": true }
+          },
+          {
+            "id": "Documents",
+            "name": "Documents",
+            "type": "list",
+            "data": null,
+            "options": { "required": false }
+          }
+        ]
+      }, 
+      {
+        "categoryName": "Advanced",
+        "categoryDescription": "API settings for Cloudboost.",
+        "properties": [
+          {
+            "id": "APP_ID",
+            "name": "App ID",
+            "type": "text",
+            "data": null,
+            "options": { "required": true, "global": true }
+          },
+          {
+            "id": "CLIENT_KEY",
+            "name": "Client Key",
+            "type": "text",
+            "data": null,
+            "options": { "required": true, "global": true }
+          }
+        ]
+      }
+    ],
+    "showOnComponentsPanel": false,
+    "isDeletable": false
+  },
+  "flow-cloudboost-component-delete": {
+    "componentId": "flow-cloudboost-component-delete",
+    "title": "Delete Object",
+    "imgSrc": "assets/icons/cloudboost.svg",
+    "type": "flow-graph-component",
+    "file": "src/delete.js",
+    "metadata": {
+      "icon-color": "#7ab260"
+    },
+    "ports": [
+      {
+        "id": "success",
+        "title": "Success",
+        "description": "Denotes the state when the task is successfully done"
+      },
+      {
+        "id": "error",
+        "title": "Error",
+        "description": "Denotes the state when an error occurs"
+      }
+    ],
+    "properties": [
+      {
+        "categoryName": "General",
+        "categoryDescription": "Basic settings about the delete component.",
+        "properties": [
+          {
+            "id": "Table",
+            "name": "Table",
+            "type": "text",
+            "data": null,
+            "options": { "required": true }
+          },
+          {
+            "id": "Documents",
+            "name": "Documents",
+            "type": "list",
+            "data": null,
+            "options": { "required": false }
+          }
+        ]
+      }, 
+      {
+        "categoryName": "Advanced",
+        "categoryDescription": "API settings for Cloudboost.",
+        "properties": [
+          {
+            "id": "APP_ID",
+            "name": "App ID",
+            "type": "text",
+            "data": null,
+            "options": { "required": true, "global": true }
+          },
+          {
+            "id": "CLIENT_KEY",
+            "name": "Client Key",
+            "type": "text",
+            "data": null,
+            "options": { "required": true, "global": true }
+          }
+        ]
+      }
+    ],
+    "showOnComponentsPanel": false,
+    "isDeletable": false
+  }
+}

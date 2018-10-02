@@ -2,34 +2,34 @@ var Flow = require('flow-platform-sdk');
 var Component = require('./component');
 var API = require('./api');
 
-class DeleteComponent extends Component {
+class SaveComponent extends Component {
 
   constructor() {
 
     super();    
-    this.name = 'Delete Component';
+    this.name = 'Save Component';
 
     var documents = new Flow.Property('Documents', 'list');
     documents.required = true;
     
     this.addProperty(documents);
 
-    // delete the documents here
+    // save the documents here
     this.attachTask(function () {
       let task = 
         new API(
           this.getProperty('APP_ID').data,
           this.getProperty('CLIENT_KEY').data,
           this.getProperty('Table').data
-        ).delete(this.getProperty('Documents').data);
+        ).save(this.getProperty('Documents').data);
       
       if (task instanceof Error) {
-        this.emitResult(this.getPort('Error'));
+        this.emitResult('Error');
       } else
         task
           .then(
-            () => this.emitResult(this.getPort('Success')),
-            () => this.emitResult(this.getPort('Error'))
+            () => this.emitResult('Success'),
+            () => this.emitResult('Error')
           );
     });
 
@@ -37,4 +37,4 @@ class DeleteComponent extends Component {
 
 }
 
-module.exports = DeleteComponent;
+module.exports = SaveComponent;

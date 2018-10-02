@@ -37,11 +37,11 @@ class QueryComponent extends Component {
             JSON.parse(this.getProperty('Constraints').data) :
             this.getProperty('Constraints').data
         ).then(
-          (results) => this.emitResult(this.getPort('Success'), results),
-          () => this.emitResult(this.getPort('Error'))
+          (results) => this.emitResult('Success', results),
+          () => this.emitResult('Error')
         );
 
-      } catch(e) { this.emitResult(this.getPort('Error')); }
+      } catch(e) { this.emitResult('Error'); }
 
     });
 
