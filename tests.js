@@ -1,23 +1,23 @@
 var Q = require('q');
 
 var Component = require('./src/component');
-var SaveComponent = require('./src/save-component');
-var DeleteComponent = require('./src/delete-component');
-var QueryComponent = require('./src/query-component');
+var SaveComponent = require('./src/save');
+var DeleteComponent = require('./src/delete');
+var QueryComponent = require('./src/query');
 
 /*
  * 
  * Before running tests
  * 
- * create a 'Games' table
- * replace appId, clientKey with your own
+ * replace appId, clientKey, table with your own
  * 
- *  */
+ */
+
 const appId = '';
 const clientKey = '';
-const TABLE = '';
+const table = '';
 
-if (!appId || !clientKey || !TABLE) return;
+if (!appId || !clientKey || !table) return;
 
 describe(`Component Tests
 `, function () {
@@ -70,7 +70,7 @@ function query(constraints=null) {
     
     component.getProperty('APP_ID').data = appId;
     component.getProperty('CLIENT_KEY').data = clientKey;
-    component.getProperty('Table').data = TABLE;
+    component.getProperty('Table').data = table;
     if (constraints)
       component.getProperty('Constraints').data = JSON.stringify(constraints);
 
@@ -94,7 +94,7 @@ function save(name) {
     
     component.getProperty('APP_ID').data = appId;
     component.getProperty('CLIENT_KEY').data = clientKey;
-    component.getProperty('Table').data = TABLE;
+    component.getProperty('Table').data = table;
     component.getProperty('Documents').data = [{ 
         name: name
     }];
@@ -119,7 +119,7 @@ function remove(id) {
     
     component.getProperty('APP_ID').data = appId;
     component.getProperty('CLIENT_KEY').data = clientKey;
-    component.getProperty('Table').data = TABLE;
+    component.getProperty('Table').data = table;
     component.getProperty('Documents').data = [id];
 
     component.getPort('Success').onEmit(function() {

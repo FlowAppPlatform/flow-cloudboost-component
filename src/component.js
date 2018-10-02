@@ -31,7 +31,8 @@ class Component extends Flow.Component {
 
   }
 
-  emitResult(port, result=null) {
+  emitResult(portName, result=null) {
+    const port = this.getPort(portName);
     if (result) port.getProperty('Result').data = result;
     port.emit();
     this.taskComplete();
