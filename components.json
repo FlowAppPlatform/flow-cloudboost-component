@@ -2,7 +2,7 @@
   "flow-cloudboost-component-query": {
     "componentId": "flow-cloudboost-component-query",
     "title": "Query for Objects",
-    "imgSrc": "assets/icons/cloudboost.svg",
+    "imgSrc": "assets/icons/query.svg",
     "type": "flow-graph-component",
     "file": "src/query.js",
     "metadata": {
@@ -68,7 +68,7 @@
   "flow-cloudboost-component-save": {
     "componentId": "flow-cloudboost-component-save",
     "title": "Save Object",
-    "imgSrc": "assets/icons/cloudboost.svg",
+    "imgSrc": "assets/icons/save.svg",
     "type": "flow-graph-component",
     "file": "src/save.js",
     "metadata": {
@@ -134,7 +134,7 @@
   "flow-cloudboost-component-delete": {
     "componentId": "flow-cloudboost-component-delete",
     "title": "Delete Object",
-    "imgSrc": "assets/icons/cloudboost.svg",
+    "imgSrc": "assets/icons/delete.svg",
     "type": "flow-graph-component",
     "file": "src/delete.js",
     "metadata": {
