@@ -25,8 +25,8 @@ class API {
   delete(ids=[]) {
     if (!ids.length) return new Error('No documents specified');
     const deferred = Q.defer();
+    const query = new this.CB.CloudQuery(this.TABLE);
     ids.forEach((id, index) => {
-      const query = new this.CB.CloudQuery(this.TABLE);
       query.findById(id).then(
         object => {
           object.delete({
