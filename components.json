@@ -5,6 +5,7 @@
     "imgSrc": "assets/icons/query.svg",
     "type": "flow-graph-component",
     "file": "src/query.js",
+    "executionPlatform": ["server", "client"],
     "metadata": {
       "icon-color": "#7ab260"
     },
@@ -71,6 +72,7 @@
     "imgSrc": "assets/icons/save.svg",
     "type": "flow-graph-component",
     "file": "src/save.js",
+    "executionPlatform": ["server", "client"],
     "metadata": {
       "icon-color": "#7ab260"
     },
@@ -137,6 +139,7 @@
     "imgSrc": "assets/icons/delete.svg",
     "type": "flow-graph-component",
     "file": "src/delete.js",
+    "executionPlatform": ["server", "client"],
     "metadata": {
       "icon-color": "#7ab260"
     },
