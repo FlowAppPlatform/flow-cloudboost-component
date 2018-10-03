@@ -87,33 +87,20 @@ class API {
   _constraintQuery(column, constraint, query) {      
     try {
       const operator = Object.keys(constraint)[0];
-      this._effectOperator(
-        operator.toString().toLowerCase(),
-        query,
-        column,
-        constraint[operator]
-      );
+      this._operators(query)[operator.toString().toLowerCase()]
+        .call(query, column, constraint[operator]);
     } catch (error) {
       return null;
     }
   }
 
-  _effectOperator(operator, query, column, value) {
-    switch (operator) {
-    case 'equalto':
-      query.equalTo(column, value);
-      break;
-    case 'notequalto':
-      query.notEqualTo(column, value);
-      break;
-    case 'lessthan':
-      query.lessThan(column, value);
-      break;
-    case 'greaterthan':
-      query.greaterThan(column, value);
-      break;
-    default: break;
-    }
+  _operators(query) {
+    return {
+      'equalto'     : query.equalTo,
+      'notequalto'  : query.notEqualTo,
+      'lessthan'    : query.lessThan,
+      'greaterthan' : query.greaterThan,
+    };
   }
 
 }
