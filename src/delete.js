@@ -9,6 +9,7 @@ class DeleteComponent extends Component {
     super();    
     this.name = 'Delete Component';
 
+    // a list of document ids here
     var documents = new Flow.Property('Documents', 'list');
     documents.required = true;
     
