@@ -7,17 +7,15 @@ var QueryComponent = require('./src/query');
 
 /*
  * 
- * Before running tests
+ * To run all tests,
  * 
  * replace appId, clientKey, table with your own
  * 
  */
 
-const appId = '';
-const clientKey = '';
-const table = '';
-
-if (!appId || !clientKey || !table) return;
+const appId       = '',
+      clientKey   = '',
+      table       = '';
 
 describe(`Component Tests
 `, function () {
@@ -61,6 +59,8 @@ describe(`Component Tests
     } catch(e) { done(new Error('Component missing required ports')); }
   })
 })
+
+if (!(appId && clientKey && table)) return
 
 function query(constraints=null) {
   const d = Q.defer();
