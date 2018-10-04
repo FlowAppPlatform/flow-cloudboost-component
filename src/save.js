@@ -24,12 +24,25 @@ class SaveComponent extends Component {
         ).save(this.getProperty('Documents').data);
       
       if (task instanceof Error) {
-        this.emitResult('Error');
+        const port = this.getPort('Error');
+        port.getProperty('Data').data = task;
+        port.emit();
+        this.taskComplete();
       } else
         task
           .then(
-            () => this.emitResult('Success'),
-            () => this.emitResult('Error')
+            response => {
+              const port = this.getPort('Success');
+              port.getProperty('Data').data = response;
+              port.emit();
+              this.taskComplete();
+            },
+            err => {
+              const port = this.getPort('Error');
+              port.getProperty('Data').data = err;
+              port.emit();
+              this.taskComplete();
+            }
           );
     });
 
