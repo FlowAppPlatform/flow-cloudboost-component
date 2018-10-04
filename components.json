@@ -11,14 +11,44 @@
     },
     "ports": [
       {
-        "id": "success",
+        "id": "Success",
         "title": "Success",
-        "description": "Denotes the state when the query is successfully made"
+        "description": "Denotes the state when the query is successfully made",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port.",
+            "properties": [
+              {
+                "id": "Data",
+                "name": "Data",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
       },
       {
-        "id": "error",
+        "id": "Error",
         "title": "Error",
-        "description": "Denotes the state when an error occurs"
+        "description": "Denotes the state when an error occurs",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port.",
+            "properties": [
+              {
+                "id": "Data",
+                "name": "Error",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
       }
     ],
     "properties": [
@@ -78,14 +108,44 @@
     },
     "ports": [
       {
-        "id": "success",
+        "id": "Success",
         "title": "Success",
-        "description": "Denotes the state when the task is successfully done"
+        "description": "Denotes the state when the task is successfully done",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port.",
+            "properties": [
+              {
+                "id": "Data",
+                "name": "Data",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
       },
       {
-        "id": "error",
+        "id": "Error",
         "title": "Error",
-        "description": "Denotes the state when an error occurs"
+        "description": "Denotes the state when an error occurs",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port.",
+            "properties": [
+              {
+                "id": "Data",
+                "name": "Error",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
       }
     ],
     "properties": [
@@ -145,14 +205,44 @@
     },
     "ports": [
       {
-        "id": "success",
+        "id": "Success",
         "title": "Success",
-        "description": "Denotes the state when the task is successfully done"
+        "description": "Denotes the state when the task is successfully done",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port.",
+            "properties": [
+              {
+                "id": "Data",
+                "name": "Data",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
       },
       {
-        "id": "error",
+        "id": "Error",
         "title": "Error",
-        "description": "Denotes the state when an error occurs"
+        "description": "Denotes the state when an error occurs",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port.",
+            "properties": [
+              {
+                "id": "Data",
+                "name": "Error",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
       }
     ],
     "properties": [
