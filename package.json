@@ -2,7 +2,7 @@
   "name": "flow-cloudboost-component",
   "version": "1.0.0",
   "description": "CloudBoost Component for Flow",
-  "main": "./src/component.js",
+  "main": "./index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha tests.js"
   },
