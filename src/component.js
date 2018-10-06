@@ -34,13 +34,6 @@ class Component extends Flow.Component {
 
   }
 
-  emitResult(portName, result=null) {
-    const port = this.getPort(portName);
-    if (result) port.getProperty('Result').data = result;
-    port.emit();
-    this.taskComplete();
-  }
-
 }
 
 module.exports = Component;
