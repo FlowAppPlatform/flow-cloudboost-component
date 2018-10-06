@@ -72,7 +72,7 @@ function query(constraints=null) {
     component.getProperty('CLIENT_KEY').data = clientKey;
     component.getProperty('Table').data = table;
     if (constraints)
-      component.getProperty('Constraints').data = JSON.stringify(constraints);
+      component.getProperty('Constraints').data = constraints;
 
     component.getPort('Success').onEmit(function() {
       d.resolve(component.getPort('Success').getProperty('Result').data);
