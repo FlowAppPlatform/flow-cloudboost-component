@@ -61,6 +61,6 @@ component.execute();
 
 And that's the Flow Cloudboost Query component.
 
-Also check the [Cloudboost Save](./docs/components/save.md) and [Cloudboost Delete](./docs/components/delete.md) components
+Also check the [Cloudboost Save](./components/save.md) and [Cloudboost Delete](./components/delete.md) components
 
 If you are having trouble, ensure that you are using the correct [Cloudboost credentials](https://cloudboost.io/).

@@ -1,4 +1,4 @@
-# Flow Cloudboost component
+# Flow Cloudboost Query component
 The npm package contains Cloudboost components designed to work with Flow SDK
 
 *To use the component, install the package in your NodeJS project*
@@ -61,6 +61,6 @@ component.execute();
 
 And that's the Flow Cloudboost Query component.
 
-Also check the [Cloudboost Save](./docs/components/save.md) and [Cloudboost Delete](./docs/components/delete.md) components
+Also check the [Cloudboost Save](./save.md) and [Cloudboost Delete](./delete.md) components
 
 If you are having trouble, ensure that you are using the correct [Cloudboost credentials](https://cloudboost.io/).
