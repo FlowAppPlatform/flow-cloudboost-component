@@ -10,15 +10,14 @@ class QueryComponent extends Component {
     this.name = 'Query Component';
 
     /* 
-    * 'Constraints' should be passed here as a JSON stringified object
     * 'Constraints' sample structure 
-    * `{ 
-    *   "first_name": {"equalTo": "qwerty"},
-    *   "age": {"greaterThan": 6}
-    * }`
+    * { 
+    *   first_name: {equalTo: "qwerty"},
+    *   age: {greaterThan: 6}
+    * }
     * 
     */
-    var constraints = new Flow.Property('Constraints', 'text');
+    var constraints = new Flow.Property('Constraints', 'object');
     this.addProperty(constraints);
 
     // query with constraints here
@@ -30,18 +29,27 @@ class QueryComponent extends Component {
           this.getProperty('APP_ID').data,
           this.getProperty('CLIENT_KEY').data,
           this.getProperty('Table').data
-        ).find(
-          this.getProperty('Constraints').data ?
-            // constraints was added JSON stringified
-            // so we have to JSON.parse here
-            JSON.parse(this.getProperty('Constraints').data) :
-            this.getProperty('Constraints').data
-        ).then(
-          (results) => this.emitResult('Success', results),
-          () => this.emitResult('Error')
+        ).find(this.getProperty('Constraints').data).then(
+          response => {
+            const port = this.getPort('Success');
+            port.getProperty('Data').data = response;
+            port.emit();
+            this.taskComplete();
+          },
+          err => {
+            const port = this.getPort('Error');
+            port.getProperty('Data').data = err;
+            port.emit();
+            this.taskComplete();
+          }
         );
 
-      } catch(e) { this.emitResult('Error'); }
+      } catch(err) {
+        const port = this.getPort('Error');
+        port.getProperty('Data').data = err;
+        port.emit();
+        this.taskComplete();
+      }
 
     });
 

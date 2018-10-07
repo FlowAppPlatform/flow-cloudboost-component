@@ -7,17 +7,15 @@ var QueryComponent = require('./src/query');
 
 /*
  * 
- * Before running tests
+ * To run all tests,
  * 
  * replace appId, clientKey, table with your own
  * 
  */
 
-const appId = '';
-const clientKey = '';
-const table = '';
-
-if (!appId || !clientKey || !table) return;
+const appId       = '',
+      clientKey   = '',
+      table       = '';
 
 describe(`Component Tests
 `, function () {
@@ -62,6 +60,8 @@ describe(`Component Tests
   })
 })
 
+if (!(appId && clientKey && table)) return
+
 function query(constraints=null) {
   const d = Q.defer();
   try {
@@ -72,7 +72,7 @@ function query(constraints=null) {
     component.getProperty('CLIENT_KEY').data = clientKey;
     component.getProperty('Table').data = table;
     if (constraints)
-      component.getProperty('Constraints').data = JSON.stringify(constraints);
+      component.getProperty('Constraints').data = constraints;
 
     component.getPort('Success').onEmit(function() {
       d.resolve(component.getPort('Success').getProperty('Result').data);
