@@ -1,6 +1,5 @@
 var Q = require('q');
 
-var Component = require('./src/component');
 var SaveComponent = require('./src/save');
 var DeleteComponent = require('./src/delete');
 var QueryComponent = require('./src/query');
@@ -25,14 +24,8 @@ describe(`Component Tests
   const TABLE = 'Table';
 
   it('Components should have all general required properties', function (done) {
-    try {
-      let component = new Component();
-      
-      component.getProperty(APP_ID);
-      component.getProperty(CLIENT_KEY);
-      component.getProperty(TABLE);
-      
-      component = new QueryComponent();
+    try {      
+      let component = new QueryComponent();
       component.getProperty(APP_ID);
       component.getProperty(CLIENT_KEY);
       component.getProperty(TABLE);
@@ -52,7 +45,13 @@ describe(`Component Tests
   })
   it('Component should have all required ports', function (done) {
     try {
-      const component = new Component();
+      let component = new QueryComponent();
+      component.getPort('Success');
+      component.getPort('Error');
+      component = new DeleteComponent();
+      component.getPort('Success');
+      component.getPort('Error');
+      component = new SaveComponent();
       component.getPort('Success');
       component.getPort('Error');
       done();
