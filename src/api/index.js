@@ -8,11 +8,16 @@ class API {
     this.CLIENT_KEY = CLIENT_KEY;
     this.TABLE = TABLE;
 
+    if (process.env.NODE_ENV === 'testing') return;
     this.CB = CB;
     this.CB.CloudApp.init(this.APP_ID, this.CLIENT_KEY);
   }
 
   save(documents=[]) {
+    /* Support tests to this point */
+    if (process.env.NODE_ENV === 'testing') return new Promise(
+      resolve => resolve(JSON.stringify({}))
+    );
     if (!documents.length) return new Error('No documents specified');
     const objects = documents.map(document => {
       const object = new this.CB.CloudObject(this.TABLE);
@@ -23,6 +28,10 @@ class API {
   }
 
   delete(ids=[]) {
+    /* Support tests to this point */
+    if (process.env.NODE_ENV === 'testing') return new Promise(
+      resolve => resolve({})
+    );
     if (!ids.length) return new Error('No documents specified');
     const deferred = Q.defer();
     const query = new this.CB.CloudQuery(this.TABLE);
@@ -56,6 +65,10 @@ class API {
    * 
    */
   find(constraints) {
+    /* Support tests to this point */
+    if (process.env.NODE_ENV === 'testing') return new Promise(
+      resolve => resolve([])
+    );
     const d = Q.defer();
     const query = this._constructQuery(constraints);
     query.setLimit(99999999);

@@ -23,25 +23,78 @@ describe(`Component Tests
   const CLIENT_KEY = 'CLIENT_KEY';
   const TABLE = 'Table';
 
-  it('Components should have all general required properties', function (done) {
-    try {      
-      let component = new QueryComponent();
-      component.getProperty(APP_ID);
-      component.getProperty(CLIENT_KEY);
-      component.getProperty(TABLE);
-      
-      component = new SaveComponent();
-      component.getProperty(APP_ID);
-      component.getProperty(CLIENT_KEY);
-      component.getProperty(TABLE);
-      
-      component = new DeleteComponent();
-      component.getProperty(APP_ID);
-      component.getProperty(CLIENT_KEY);
-      component.getProperty(TABLE);
-      
-      done();
-    } catch(e) { done(new Error('A component is missing required properties')); }
+  const Graph = require('flow-platform-sdk').Graph;
+
+  it('Query Component should execute without errors', function (done) {
+    try {
+      const Component = require('./src/query');
+      const component = new Component();
+
+      component.getProperty('APP_ID').data = APP_ID;
+      component.getProperty('CLIENT_KEY').data = CLIENT_KEY;
+      component.getProperty('Table').data = TABLE;
+
+      component.getProperty('Constraints').data = {
+        name: { equalTo: 'Chess' }
+      };
+
+      component.getPort('Success').onEmit(function(){
+        done();
+      });
+      component.getPort('Error').onEmit(function(){
+        done(component.getPort('Error').getProperty('Data').data);
+      });
+
+      new Graph("graph-1").addComponent(component);
+      component.execute();
+
+    } catch(e) { done(e); }
+  })
+  it('Save Component should execute without errors', function (done) {
+    try {
+      const Component = require('./src/save');
+      const component = new Component();
+
+      component.getProperty('APP_ID').data = APP_ID;
+      component.getProperty('CLIENT_KEY').data = CLIENT_KEY;
+      component.getProperty('Table').data = TABLE;
+
+      component.getProperty('Documents').data = [{ name: 'Jonah Dillingham' }];
+
+      component.getPort('Success').onEmit(function(){
+        done();
+      });
+      component.getPort('Error').onEmit(function(){
+        done(component.getPort('Error').getProperty('Data').data);
+      });
+
+      new Graph("graph-1").addComponent(component);
+      component.execute();
+
+    } catch(e) { done(e); }
+  })
+  it('Delete Component should execute without errors', function (done) {
+    try {
+      const Component = require('./src/delete');
+      const component = new Component();
+
+      component.getProperty('APP_ID').data = APP_ID;
+      component.getProperty('CLIENT_KEY').data = CLIENT_KEY;
+      component.getProperty('Table').data = TABLE;
+
+      component.getProperty('Documents').data = ['TbzuxauD'];
+
+      component.getPort('Success').onEmit(function(){
+        done();
+      });
+      component.getPort('Error').onEmit(function(){
+        done(component.getPort('Error').getProperty('Data').data);
+      });
+
+      new Graph("graph-1").addComponent(component);
+      component.execute();
+
+    } catch(e) { done(e); }
   })
   it('Component should have all required ports', function (done) {
     try {
