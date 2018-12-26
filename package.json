@@ -1,6 +1,5 @@
 {
   "name": "flow-cloudboost-component",
-  "version": "1.0.0",
   "description": "CloudBoost components designed to work with Flow SDK",
   "main": "./index.js",
   "scripts": {
