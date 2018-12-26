@@ -1,10 +1,10 @@
 # Flow Cloudboost Save component
-The npm package contains Cloudboost components designed to work with Flow SDK
+Cloudboost components designed to work with Flow SDK
 
-*To use the component, install the package in your NodeJS project*
+*To get started, install the package in your NodeJS project*
 
 ```
-npm install flow-cloudboost-component --save
+npm i flow-cloudboost-component --save
 ```
 
 *Use the component as below*
@@ -57,16 +57,19 @@ component.getPort('Error').onEmit(function() {
   // the actual error can be accessed through the 'Data' property of the port
   let err = component.getPort('Error').getProperty('Data').data;
 });
+```
 
+*Execute the component*
+```javascript
+// add the component to a graph before executing it
+const Graph = require('flow-platform-sdk').Graph;
+new Graph("graph-1").addComponent(component);
 
-// mandatory to execute the component
 component.execute();
 ```
 
 #### Conclusion
 
-And that's the Flow Cloudboost Save component.
-
-You may also check the [Cloudboost Query](./query.md) and [Cloudboost Delete](./delete.md) components
+Also check the [Cloudboost Query](./query.md) and [Cloudboost Delete](./delete.md) components
 
 If you are having trouble, ensure that you are using the correct [Cloudboost credentials](https://cloudboost.io/).

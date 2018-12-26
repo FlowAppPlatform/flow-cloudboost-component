@@ -1,14 +1,14 @@
 {
   "name": "flow-cloudboost-component",
-  "version": "1.0.0",
   "description": "CloudBoost components designed to work with Flow SDK",
   "main": "./index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha tests.js"
+    "test": "eslint ./src --fix && cross-env NODE_ENV='testing' ./node_modules/mocha/bin/mocha tests.js"
   },
   "dependencies": {
     "cloudboost": "^2.0.264",
-    "flow-platform-sdk": "^2.0.99",
+    "cross-env": "^5.2.0",
+    "flow-platform-sdk": "^1.2.0",
     "q": "^1.5.1"
   },
   "devDependencies": {
