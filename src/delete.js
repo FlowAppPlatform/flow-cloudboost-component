@@ -3,9 +3,9 @@ var API = require('./api');
 
 class DeleteComponent extends Flow.Component {
 
-  constructor() {
+  constructor(id = null) {
 
-    super();    
+    super(id);    
     this.name = 'Delete Component';
 
     var app_id = new Flow.Property('APP_ID', 'text');

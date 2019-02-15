@@ -3,9 +3,9 @@ var API = require('./api');
 
 class QueryComponent extends Flow.Component {
 
-  constructor() {
+  constructor(id = null) {
 
-    super();    
+    super(id);    
     this.name = 'Query Component';
 
     var app_id = new Flow.Property('APP_ID', 'text');

@@ -1,9 +1,10 @@
 {
   "flow-cloudboost-component-query": {
-    "componentId": "flow-cloudboost-component-query",
+    "graphComponentId": "flow-cloudboost-component-query",
     "title": "Query for Objects",
-    "imgSrc": "assets/icons/query.svg",
-    "type": "flow-graph-component",
+    "category": "Actions",
+    "imgSrc": "assets/images/icons/query.svg",
+    "type": "graphComponent",
     "file": "src/query.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
@@ -17,7 +18,7 @@
         "properties": [
           {
             "categoryName": "General",
-            "categoryDescription": "Basic settings about this port.",
+            "categoryDescription": "Basic settings about this port",
             "properties": [
               {
                 "id": "Data",
@@ -37,7 +38,7 @@
         "properties": [
           {
             "categoryName": "General",
-            "categoryDescription": "Basic settings about this port.",
+            "categoryDescription": "Basic settings about this port",
             "properties": [
               {
                 "id": "Data",
@@ -54,7 +55,7 @@
     "properties": [
       {
         "categoryName": "General",
-        "categoryDescription": "Basic settings about the query component.",
+        "categoryDescription": "Basic settings about the query component",
         "properties": [
           {
             "id": "Table",
@@ -74,7 +75,7 @@
       }, 
       {
         "categoryName": "Advanced",
-        "categoryDescription": "API settings for Cloudboost.",
+        "categoryDescription": "API settings for Cloudboost",
         "properties": [
           {
             "id": "APP_ID",
@@ -97,10 +98,11 @@
     "isDeletable": true
   },
   "flow-cloudboost-component-save": {
-    "componentId": "flow-cloudboost-component-save",
+    "graphComponentId": "flow-cloudboost-component-save",
     "title": "Save Object",
-    "imgSrc": "assets/icons/save.svg",
-    "type": "flow-graph-component",
+    "category": "Actions",
+    "imgSrc": "assets/images/icons/save.svg",
+    "type": "graphComponent",
     "file": "src/save.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
@@ -114,7 +116,7 @@
         "properties": [
           {
             "categoryName": "General",
-            "categoryDescription": "Basic settings about this port.",
+            "categoryDescription": "Basic settings about this port",
             "properties": [
               {
                 "id": "Data",
@@ -134,7 +136,7 @@
         "properties": [
           {
             "categoryName": "General",
-            "categoryDescription": "Basic settings about this port.",
+            "categoryDescription": "Basic settings about this port",
             "properties": [
               {
                 "id": "Data",
@@ -151,7 +153,7 @@
     "properties": [
       {
         "categoryName": "General",
-        "categoryDescription": "Basic settings about the save component.",
+        "categoryDescription": "Basic settings about the save component",
         "properties": [
           {
             "id": "Table",
@@ -171,7 +173,7 @@
       }, 
       {
         "categoryName": "Advanced",
-        "categoryDescription": "API settings for Cloudboost.",
+        "categoryDescription": "API settings for Cloudboost",
         "properties": [
           {
             "id": "APP_ID",
@@ -194,10 +196,11 @@
     "isDeletable": true
   },
   "flow-cloudboost-component-delete": {
-    "componentId": "flow-cloudboost-component-delete",
+    "graphComponentId": "flow-cloudboost-component-delete",
     "title": "Delete Object",
-    "imgSrc": "assets/icons/delete.svg",
-    "type": "flow-graph-component",
+    "category": "Actions",
+    "imgSrc": "assets/images/icons/delete.svg",
+    "type": "graphComponent",
     "file": "src/delete.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
@@ -211,7 +214,7 @@
         "properties": [
           {
             "categoryName": "General",
-            "categoryDescription": "Basic settings about this port.",
+            "categoryDescription": "Basic settings about this port",
             "properties": [
               {
                 "id": "Data",
@@ -231,7 +234,7 @@
         "properties": [
           {
             "categoryName": "General",
-            "categoryDescription": "Basic settings about this port.",
+            "categoryDescription": "Basic settings about this port",
             "properties": [
               {
                 "id": "Data",
@@ -248,7 +251,7 @@
     "properties": [
       {
         "categoryName": "General",
-        "categoryDescription": "Basic settings about the delete component.",
+        "categoryDescription": "Basic settings about the delete component",
         "properties": [
           {
             "id": "Table",
@@ -268,7 +271,7 @@
       }, 
       {
         "categoryName": "Advanced",
-        "categoryDescription": "API settings for Cloudboost.",
+        "categoryDescription": "API settings for Cloudboost",
         "properties": [
           {
             "id": "APP_ID",
