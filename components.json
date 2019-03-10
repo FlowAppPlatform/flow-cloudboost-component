@@ -1,14 +1,14 @@
 {
   "flow-cloudboost-component-query": {
     "graphComponentId": "flow-cloudboost-component-query",
-    "title": "Query for Objects",
-    "category": "Actions",
+    "title": "Cloudboost Query Objects",
+    "category": "Database",
     "imgSrc": "assets/images/icons/query.svg",
     "type": "graphComponent",
     "file": "src/query.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
-      "icon-color": "#7ab260"
+      "icon-color": "#359ef4"
     },
     "ports": [
       {
@@ -99,14 +99,14 @@
   },
   "flow-cloudboost-component-save": {
     "graphComponentId": "flow-cloudboost-component-save",
-    "title": "Save Object",
-    "category": "Actions",
-    "imgSrc": "assets/images/icons/save.svg",
+    "title": "Cloudboost Save Object",
+    "category": "Database",
+    "imgSrc": "assets/images/icons/save-white.svg",
     "type": "graphComponent",
     "file": "src/save.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
-      "icon-color": "#7ab260"
+      "icon-color": "#359ef4"
     },
     "ports": [
       {
@@ -197,14 +197,14 @@
   },
   "flow-cloudboost-component-delete": {
     "graphComponentId": "flow-cloudboost-component-delete",
-    "title": "Delete Object",
-    "category": "Actions",
+    "title": "Cloudboost Delete Object",
+    "category": "Database",
     "imgSrc": "assets/images/icons/delete.svg",
     "type": "graphComponent",
     "file": "src/delete.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
-      "icon-color": "#7ab260"
+      "icon-color": "#359ef4"
     },
     "ports": [
       {
