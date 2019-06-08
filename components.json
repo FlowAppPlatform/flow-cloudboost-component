@@ -1,7 +1,7 @@
 {
   "flow-cloudboost-component-query": {
     "graphComponentId": "flow-cloudboost-component-query",
-    "title": "Cloudboost Query Objects",
+    "title": "Query Objects",
     "category": "Database",
     "imgSrc": "assets/images/icons/query.svg",
     "type": "graphComponent",
@@ -97,107 +97,9 @@
     "showOnComponentsPanel": true,
     "isDeletable": true
   },
-  "flow-cloudboost-component-save": {
-    "graphComponentId": "flow-cloudboost-component-save",
-    "title": "Cloudboost Save Object",
-    "category": "Database",
-    "imgSrc": "assets/images/icons/save-white.svg",
-    "type": "graphComponent",
-    "file": "src/save.js",
-    "executionPlatform": ["server", "client"],
-    "metadata": {
-      "icon-color": "#359ef4"
-    },
-    "ports": [
-      {
-        "id": "Success",
-        "title": "Success",
-        "description": "Denotes the state when the task is successfully done",
-        "properties": [
-          {
-            "categoryName": "General",
-            "categoryDescription": "Basic settings about this port",
-            "properties": [
-              {
-                "id": "Data",
-                "name": "Data",
-                "type": "object",
-                "data": null,
-                "options": { "required": true }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Error",
-        "title": "Error",
-        "description": "Denotes the state when an error occurs",
-        "properties": [
-          {
-            "categoryName": "General",
-            "categoryDescription": "Basic settings about this port",
-            "properties": [
-              {
-                "id": "Data",
-                "name": "Error",
-                "type": "object",
-                "data": null,
-                "options": { "required": true }
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "properties": [
-      {
-        "categoryName": "General",
-        "categoryDescription": "Basic settings about the save component",
-        "properties": [
-          {
-            "id": "Table",
-            "name": "Table",
-            "type": "text",
-            "data": null,
-            "options": { "required": true }
-          },
-          {
-            "id": "Documents",
-            "name": "Documents",
-            "type": "list",
-            "data": null,
-            "options": { "required": false }
-          }
-        ]
-      }, 
-      {
-        "categoryName": "Advanced",
-        "categoryDescription": "API settings for Cloudboost",
-        "properties": [
-          {
-            "id": "APP_ID",
-            "name": "App ID",
-            "type": "text",
-            "data": null,
-            "options": { "required": true, "global": true }
-          },
-          {
-            "id": "CLIENT_KEY",
-            "name": "Client Key",
-            "type": "text",
-            "data": null,
-            "options": { "required": true, "global": true }
-          }
-        ]
-      }
-    ],
-    "showOnComponentsPanel": true,
-    "isDeletable": true
-  },
   "flow-cloudboost-component-delete": {
     "graphComponentId": "flow-cloudboost-component-delete",
-    "title": "Cloudboost Delete Object",
+    "title": "Delete Object",
     "category": "Database",
     "imgSrc": "assets/images/icons/delete.svg",
     "type": "graphComponent",

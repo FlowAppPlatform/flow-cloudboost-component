@@ -1,6 +1,10 @@
 var Flow = require('flow-platform-sdk');
 var API = require('./api');
 
+/* ABANDONED */
+/* This component is no longer used */
+/* This (https://github.com/FlowAppPlatform/flow-insert-object-component) is used instead */
+
 class SaveComponent extends Flow.Component {
 
   constructor(id = null) {
