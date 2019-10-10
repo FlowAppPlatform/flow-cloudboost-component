@@ -15,6 +15,7 @@
         "id": "Success",
         "title": "Success",
         "description": "Denotes the state when the query is successfully made",
+        "color": "#3BC105",
         "properties": [
           {
             "categoryName": "General",
@@ -35,6 +36,7 @@
         "id": "Error",
         "title": "Error",
         "description": "Denotes the state when an error occurs",
+        "color": "#C83838",
         "properties": [
           {
             "categoryName": "General",
@@ -113,6 +115,7 @@
         "id": "Success",
         "title": "Success",
         "description": "Denotes the state when the task is successfully done",
+        "color": "#3BC105",
         "properties": [
           {
             "categoryName": "General",
@@ -133,6 +136,7 @@
         "id": "Error",
         "title": "Error",
         "description": "Denotes the state when an error occurs",
+        "color": "#C83838",
         "properties": [
           {
             "categoryName": "General",
