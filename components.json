@@ -15,7 +15,7 @@
         "id": "Success",
         "title": "Success",
         "description": "Denotes the state when the query is successfully made",
-        "color": "#3BC105",
+        "color": "#359ef4",
         "properties": [
           {
             "categoryName": "General",
@@ -115,7 +115,7 @@
         "id": "Success",
         "title": "Success",
         "description": "Denotes the state when the task is successfully done",
-        "color": "#3BC105",
+        "color": "#359ef4",
         "properties": [
           {
             "categoryName": "General",
